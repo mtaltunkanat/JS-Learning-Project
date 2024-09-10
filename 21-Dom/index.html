@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM</title>
+</head>
+<!--<h1 class="title">JavaScript DOM</h1>-->
+<h2>Öğrenci Listesi</h2>
+
+<ul class="list">
+    <li class="list-item">Ali</li>
+    <li class="list-item">Veli</li>
+    <li class="list-item">Ahmet</li>
+    <li class="list-item">Mehmet</li>
+    <li class="list-item">Taha</li>
+</ul>
+
+<h2>Öğrenci Listesi</h2>
+<ul class="list2">
+    <li class="list-item">Ali</li>
+    <li class="list-item">Veli</li>
+    <li class="list-item">Ahmet</li>
+    <li class="list-item">Mehmet</li>
+    <li class="list-item">Taha</li>
+</ul>
+
+
+<body>
+
+    <script>
+        // Tekli Seçiciler
+
+        /*   const title = document.querySelector("h1") //classına yada id göre seçmeye yarar tek bir şeyi seçer //"."nokta ile class "#"ile id seçilir css aynısı no problem
+    const title2 = document.getElementById("title") //sadece id ismine göre seçebiliyoruz
+    title.style.color = "red"
+    title2.style.color = "blue" */
+        /*  document.querySelector("h1").style.color = "white"; //queryselector ilk bulduğunu seçer birden fazla varsa ve seçmeye yarar
+         document.querySelector("h1").style.backgroundColor = "red";
+         document.querySelector("h1").style.width = "250px";
+         document.querySelector("h1").style.height = "100px";
+         const title = document.querySelector("h1");
+         title.innerText = "DOM"; //yazıyı değiştirmeye yarar buraya ne yazarsan yazı o olur
+         title.innerHTML = "<button>click</button>"; // istedğimiz kodu yazıp html elemanları oluşturabiliriz örnek burada button oluşturulmuş
+         const list = document.querySelector("ul"); */
+        /* document.querySelector("li").style.color = "red";
+        document.querySelector("li:last-child").style.color = "brown";
+        document.querySelector("li:nth-child(3)").style.color = "purple";
+        document.querySelector("li:nth-child(2)").style.color = "blue";
+        document.querySelector("li:nth-child(4)").style.color = "orange"; 
+          console.log(listItem.length);  */
+
+
+        //JavaScript Çoklu Seçiciler
+        // const listItem = document.getElementsByClassName("list-item"); //çok seçime yarıyor istenilen klastakileri seçer
+        //const listItem = document.querySelectorAll(".list-item");
+        /*   const list1 = document.querySelector(".list")
+          const listItem = list1.getElementsByTagName("li"); */ //tüm elemanların içinde aramak yerine documenti silip istediğimiz class içindekileri seçebiliriz
+        const listItems = document.querySelectorAll(".list li") //kimin class yada id ismi kullanılırsa onu etkiler
+            /*  for (let i = 0; i < listItem.length; i++) {
+                 listItem[i].style.color = "red" //hepsinin rengini değiştirmek için kullanıldı
+             } */
+
+        for (let list of listItems) {
+            list.style.color = "blue"
+
+        }
+    </script>
+</body>
+
+</html>
