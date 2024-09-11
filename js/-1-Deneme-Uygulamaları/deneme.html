@@ -21,7 +21,7 @@
 
 <!-- buraya tekrar bak temizle butonunu düzeltme -->
 <div class="flex justify-center my-5">
-    <button class="p-3 bg-red-500 text-white " id="clear" >Temizle
+    <button class="p-3 bg-red-500 text-white " onclick="clearTodos()">Temizle
     </button>
 </div>
 
@@ -35,10 +35,11 @@
 </div>
 
 <script>
+    //daha kısa hali 22.ci uygulamanın
    const textInputDOM = document.getElementById("todo-input");
    const btnAddTodoDOM = document.getElementById("add-todo");
    const todosDOM = document.querySelector("#todos");
-   const btnClearDOM = document.querySelector("#clear");
+
 
    let textInputValue = "";
    let todos =[];
@@ -48,8 +49,9 @@
    
 });
 
+
 btnAddTodoDOM.addEventListener("click", addTodo);
-btnClearDOM.addEventListener("click", clearTodos);
+
 
 function addTodo(e){
     e.preventDefault();
@@ -57,8 +59,7 @@ function addTodo(e){
      textInputDOM.value="";
      displayTodos();
 }
-
-function displayTodos(){
+ function displayTodos(){
     let result ="";
 
     if(todos.length === 0){
@@ -94,11 +95,16 @@ for( let index in todos){
   displayTodos();
 }
   
+  
+
   function clearTodos(){
     todos.splice(0, todos.length);
     displayTodos();
   }
  displayTodos();
+
+
+
 
 </script>
 
