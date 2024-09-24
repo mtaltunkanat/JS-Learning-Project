@@ -4,7 +4,7 @@ setTimeout(()=> {
     console.log("2.işlem");
 }, 2000)//*bu functionun logu 2 saniye geç gelir yani 1-2-3 işem diye gelmek yerine 1-3-2 şeklinde gelir 200 yazması 2 saniye geç gelmesini  sağlar
 console.log("3.işlem"); */
- //zamanlama ile çalıştırmayı öğrendik 
+//zamanlama ile çalıştırmayı öğrendik
 //! callback Fonksiyonu
 
 /* function sayHello(name, callback){
@@ -43,8 +43,8 @@ xhr.send()
  */
 
 //! Promise
- //asenkron puanlamayı öğrendik then-catch  paramerelerini öğrendik 
- //resolve - reject parametrelerini nasıl kullanılır onu öğrendik
+//asenkron puanlamayı öğrendik then-catch  paramerelerini öğrendik
+//resolve - reject parametrelerini nasıl kullanılır onu öğrendik
 /* //çifterli 100 e kadar sayma uygulaması 
 function getRandomNumber(){
     return new Promise((resolve, reject)=>{
@@ -65,8 +65,8 @@ getRandomNumber()
 
 //new Promise(resolve, reject) // bir işlem başlatılıp birilirse resolve döndürülüyormuş bunada istediğimizi yazıyormuşuz hatalı ise reject new yazarsak içinden döndürebiliriz
 
- //! Fetch
- // yukarıdakinin hemen hemen aynısı
+//! Fetch
+// yukarıdakinin hemen hemen aynısı
 /* 
   fetch("https://jsonplaceholder.typicode.com/users")
  .then(response=> response.json())
@@ -74,7 +74,7 @@ getRandomNumber()
  .catch(error=> console.log (error));  */
 
 //? yukarıdakinin daha farklı versiyonu
- /* const response = fetch ("https://jsonplaceholder.typicode.com/users");
+/* const response = fetch ("https://jsonplaceholder.typicode.com/users");
  console.log(
  response
 .then((response) => response.json())
@@ -83,26 +83,29 @@ getRandomNumber()
 ); */
 
 //! Async & Await
-// thenler ile işlem yapılıyor promisi kullanıyor 
+// thenler ile işlem yapılıyor promisi kullanıyor
 // async yani asenkron veri alınacağını bildirir functiondan önce yazılırsa
 /* async function getData(){
     const response = await fetch("https://jsonplaceholder.typicode.com/users"); // await veriyi bekletir veriyi aldıktan sonra alt satıra geçirir
     const data = await response.json(); //await key word
     console.log(data);
 } */
-    //todo yukarıdakinin aynısı
-   /*  const getData = async () =>{ //? eski tiplerde async functiondan önce yeni tiplerde sonra kullanılıt
+//todo yukarıdakinin aynısı
+/*  const getData = async () =>{ //? eski tiplerde async functiondan önce yeni tiplerde sonra kullanılıt
     const response = await fetch("https://jsonplaceholder.typicode.com/users"); // await veriyi bekletir veriyi aldıktan sonra alt satıra geçirir
     const data = await response.json(); //await key word yukarı gelen satır bilgisi ile kendi bilgisini alt satıra aktarır
     console.log(data);//gelen verileri yazdırır
     }; */
-    const getData = async () => { // şeklinde kullanıyoruz
-        try{//hata yoksa bunu
-            const response = await fetch("https://jsonplaceholder.typicode.com/users"); // await veriyi bekletir veriyi aldıktan sonra alt satıra geçirir
+const getData = async () => {
+  // şeklinde kullanıyoruz
+  try {
+    //hata yoksa bunu
+    const response = await fetch("https://jsonplaceholder.typicode.com/users"); // await veriyi bekletir veriyi aldıktan sonra alt satıra geçirir
     const data = await response.json(); //await key word yukarı gelen satır bilgisi ile kendi bilgisini alt satıra aktarır
-    console.log(data);//gelen verileri yazdırır
-        }catch(error){//hata varsa bunu okur
-       console.log(error);
-        }
-    }
+    console.log(data); //gelen verileri yazdırır
+  } catch (error) {
+    //hata varsa bunu okur
+    console.log(error);
+  }
+};
 getData();
