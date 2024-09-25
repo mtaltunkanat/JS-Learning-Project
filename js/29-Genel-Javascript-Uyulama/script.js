@@ -161,40 +161,39 @@ getUserData(); */
 //! async/await veri çekme
 
 async function getUserData() {
-    try {
-      const response = await fetch("https://jsonplaceholder.typicode.com/users");
-      const userList = await response.json();
-      getUserList(userList)
-    } catch (error) {
-      console.log(error);
-    }finally{
-      console.log("işlem tamamlandı");
-    }
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const userList = await response.json();
+    getUserList(userList);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    console.log("işlem tamamlandı");
   }
-  
-  function getUserList(userList){
-      const userListDOM = document.querySelector(".user-list")
-      
-      let userItem = ""
-      userList.forEach((user)=> {
-          userItem+= `
-          <li class="user-card">
-          <img
-            src="https://i.pravatar.cc/150?img=${user.id}"
-            alt="${user.name}"
-            class="user-image"
-          />
-          <div class="user-info">
-            <h3 class="user-name">${user.name}</h3>
-            <p class="user-username">${user.username}</p>
-            <p class="user-email">${user.email}</p>
-            <p class="user-website">${user.website}</p>
-            <p class="user-userId">UserID: ${user.id}</p>
-          </div>
-        </li>
-          `
-      })
-      userListDOM.innerHTML = userItem
-  }
-  
-  getUserData();
+}
+
+function getUserList(userList) {
+  const userListDOM = document.querySelector(".user-list");
+  let userItem = "";
+  userList.forEach((user) => {
+    userItem += `
+   <li class="user-card">
+        <img
+          src="https://i.pravatar.cc/150?img=${user.id}"
+          alt="${user.name}"
+          class="user-image"
+        />
+        <div class="user-info">
+          <h3 class="user-name">${user.name}</h3>
+          <p class="user-username">${user.username}</p>
+          <p class="user-email">${user.email}</p>
+          <p class="user-website">${user.website}</p>
+          <p class="user-userId">UserID: ${user.id}</p>
+        </div>
+      </li>
+   `
+  });
+  userListDOM.innerHTML = userItem;
+}
+
+getUserData();
